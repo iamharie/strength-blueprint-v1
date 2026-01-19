@@ -4,7 +4,10 @@ const path = require("path");
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
-
+  const testModuleUrl = isProduction
+    ? process.env.TEST_MODULE_URL ||
+      "https://your-test-module.netlify.app/remoteEntry.js"
+    : "testModule@http://localhost:3001/remoteEntry.js";
   return {
     entry: "./src/main.tsx",
     mode: isProduction ? "production" : "development",
@@ -64,9 +67,7 @@ module.exports = (env, argv) => {
       new ModuleFederationPlugin({
         name: "hostApp",
         remotes: {
-          testModule: isProduction
-            ? "testModule@http://localhost:3001/remoteEntry.js"
-            : "testModule@http://localhost:3001/remoteEntry.js",
+          testModule: testModuleUrl,
         },
         shared: {
           react: {
