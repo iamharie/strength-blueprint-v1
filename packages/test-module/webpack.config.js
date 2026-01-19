@@ -21,9 +21,7 @@ module.exports = (env, argv) => {
       historyApiFallback: true,
     },
     output: {
-      publicPath: publicPath
-        ? "http://localhost:3001/"
-        : "http://localhost:3001/",
+      publicPath: publicPath,
       clean: true,
       filename: "[name].[contenthash].js",
     },
