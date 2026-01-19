@@ -1,0 +1,25 @@
+{
+  "name": "hari-portfolio-mfe",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "install:all": "npm install && cd packages/host-app && npm install && cd ../test-module && npm install",
+    "dev": "concurrently \"npm run dev:test-module\" \"npm run dev:host\"",
+    "dev:host": "cd packages/host-app && npm run dev",
+    "dev:test-module": "cd packages/test-module && npm run dev",
+    "build": "npm run build:test-module && npm run build:host",
+    "build:host": "cd packages/host-app && npm run build",
+    "build:test-module": "cd packages/test-module && npm run build",
+    "clean": "rm -rf packages/*/node_modules packages/*/dist node_modules",
+    "setup": "npm run install:all"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "description": "Hariharan Mohan's Portfolio - Micro Frontend Architecture",
+  "author": "Hariharan Mohan",
+  "license": "MIT"
+}
