@@ -5,8 +5,7 @@ const path = require("path");
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
   const testModuleUrl = isProduction
-    ? process.env.TEST_MODULE_URL ||
-      "https://your-test-module.netlify.app/remoteEntry.js"
+    ? `testModule@${process.env.TEST_MODULE_URL || "https://your-test-module.netlify.app/"}remoteEntry.js`
     : "testModule@http://localhost:3001/remoteEntry.js";
   return {
     entry: "./src/main.tsx",
