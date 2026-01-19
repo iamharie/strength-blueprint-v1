@@ -5,6 +5,9 @@ const path = require("path");
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
 
+  const publicPath = isProduction
+    ? process.env.TEST_MODULE_URL || "https://your-test-module.netlify.app/"
+    : "http://localhost:3001/";
   return {
     // entry: "./src/main.tsx", // Remove if not running standalone
     entry: "./src/main.tsx", // Or keep this as the entry
@@ -18,7 +21,7 @@ module.exports = (env, argv) => {
       historyApiFallback: true,
     },
     output: {
-      publicPath: isProduction
+      publicPath: publicPath
         ? "http://localhost:3001/"
         : "http://localhost:3001/",
       clean: true,
