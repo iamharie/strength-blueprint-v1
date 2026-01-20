@@ -6,13 +6,13 @@
     "mfes/*"
   ],
   "scripts": {
-    "install:all": "npm install && cd mfes/portfolio-shell && npm install && cd ../test-module && npm install",
-    "dev": "concurrently \"npm run dev:test-module\" \"npm run dev:host\"",
+    "install:all": "npm install && cd mfes/portfolio-shell && npm install && cd ../portfolio-feature-staystrong && npm install",
+    "dev": "concurrently \"npm run dev:portfolio-feature-staystrong\" \"npm run dev:host\"",
     "dev:host": "cd mfes/portfolio-shell && npm run dev",
-    "dev:test-module": "cd mfes/test-module && npm run dev",
-    "build": "npm run build:test-module && npm run build:host",
+    "dev:portfolio-feature-staystrong": "cd mfes/portfolio-feature-staystrong && npm run dev",
+    "build": "npm run build:portfolio-feature-staystrong && npm run build:host",
     "build:host": "cd mfes/portfolio-shell && npm run build",
-    "build:test-module": "cd mfes/test-module && npm run build",
+    "build:portfolio-feature-staystrong": "cd mfes/portfolio-feature-staystrong && npm run build",
     "clean": "rm -rf mfes/*/node_modules mfes/*/dist node_modules",
     "setup": "npm run install:all"
   },

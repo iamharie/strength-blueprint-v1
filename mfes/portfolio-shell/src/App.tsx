@@ -13,7 +13,8 @@ const TestPage = lazy(() =>
     return {
       default: () => (
         <div>
-          Test module not available. Start test-module server on port 3001.
+          Test module not available. Start portfolio-feature-staystrong server
+          on port 3001.
         </div>
       ),
     };

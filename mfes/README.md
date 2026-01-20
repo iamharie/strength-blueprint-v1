@@ -5,7 +5,7 @@ This directory contains the micro frontend architecture for Hariharan Mohan's Po
 ## 📦 mfes
 
 - **portfolio-shell** - Main portfolio application (Host)
-- **test-module** - TEST page as a remote micro frontend
+- **portfolio-feature-staystrong** - Stay Strong module as a remote micro frontend
 
 ## 🚀 Quick Start
 
