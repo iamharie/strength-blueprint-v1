@@ -4,9 +4,9 @@ const path = require("path");
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
-  const testModuleUrl = isProduction
-    ? `testModule@${process.env.TEST_MODULE_URL || "https://your-test-module.netlify.app/"}remoteEntry.js`
-    : "testModule@http://localhost:3001/remoteEntry.js";
+  const stayStrongUrl = isProduction
+    ? `portfolioFeatureStaystrong@${process.env.STAYSTRONG_FEATURE_URL || "https://staystrongbyhari.netlify.app/"}remoteEntry.js`
+    : "portfolioFeatureStaystrong@http://localhost:3001/remoteEntry.js";
   return {
     entry: "./src/main.tsx",
     mode: isProduction ? "production" : "development",
@@ -64,9 +64,9 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new ModuleFederationPlugin({
-        name: "hostApp",
+        name: "portfolioShell",
         remotes: {
-          testModule: testModuleUrl,
+          portfolioFeatureStaystrong: stayStrongUrl,
         },
         shared: {
           react: {

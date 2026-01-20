@@ -6,7 +6,8 @@ module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
 
   const publicPath = isProduction
-    ? process.env.TEST_MODULE_URL || "https://your-test-module.netlify.app/"
+    ? process.env.STAYSTRONG_FEATURE_URL ||
+      "https://staystrongbyhari.netlify.app/"
     : "http://localhost:3001/";
   return {
     // entry: "./src/main.tsx", // Remove if not running standalone
@@ -51,7 +52,7 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new ModuleFederationPlugin({
-        name: "testModule",
+        name: "portfolioFeatureStaystrong",
         filename: "remoteEntry.js",
         exposes: {
           "./TestPage": "./src/index.ts",
