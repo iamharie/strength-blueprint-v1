@@ -6,12 +6,12 @@
     "mfes/*"
   ],
   "scripts": {
-    "install:all": "npm install && cd mfes/host-app && npm install && cd ../test-module && npm install",
+    "install:all": "npm install && cd mfes/portfolio-shell && npm install && cd ../test-module && npm install",
     "dev": "concurrently \"npm run dev:test-module\" \"npm run dev:host\"",
-    "dev:host": "cd mfes/host-app && npm run dev",
+    "dev:host": "cd mfes/portfolio-shell && npm run dev",
     "dev:test-module": "cd mfes/test-module && npm run dev",
     "build": "npm run build:test-module && npm run build:host",
-    "build:host": "cd mfes/host-app && npm run build",
+    "build:host": "cd mfes/portfolio-shell && npm run build",
     "build:test-module": "cd mfes/test-module && npm run build",
     "clean": "rm -rf mfes/*/node_modules mfes/*/dist node_modules",
     "setup": "npm run install:all"
