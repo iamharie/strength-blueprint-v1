@@ -9,7 +9,7 @@ import Root from "./pages/Root";
 
 // Dynamically import TestPage from remote module
 const TestPage = lazy(() =>
-  import("testModule/TestPage").catch(() => {
+  import("portfolioFeatureStaystrong/TestPage").catch(() => {
     return {
       default: () => (
         <div>
@@ -31,12 +31,12 @@ export default function App() {
         { path: "experience", element: <Experience /> },
         { path: "team", element: <ProjectPage /> },
         {
-          path: "test",
+          path: "staystrong",
           element: (
             <Suspense
               fallback={
                 <div className="min-h-screen flex items-center justify-center">
-                  Loading TEST Module...
+                  Loading StayStrong Module...
                 </div>
               }
             >

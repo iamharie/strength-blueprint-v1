@@ -100,7 +100,7 @@ const TestPage: React.FC = () => {
                   ✓ Webpack Module Federation Active
                 </div>
                 <div className="text-blue-400">
-                  Remote: testModule@http://localhost:3001/remoteEntry.js
+                  Remote: portfolioFeatureStaystrong@http://localhost:3001/remoteEntry.js
                 </div>
               </code>
             </div>
